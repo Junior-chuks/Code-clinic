@@ -44,13 +44,13 @@ def volunteer(cred):
     # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
     # stored credentials.
     # description = input()
-    
-    title = input("what would you like to do?")
-    location = input("location:")
-    description = input("what do you want help with?")
-    date = input("Start date(yy-mm-dd):")
-    date_0 = input("End date(yy-mm-dd):")
-    time = input("Time(00:00):")
+    email = input("student email: ")
+    title = input("please type 'volunteer': ")
+    location = input("location: ")
+    description = input("what do you want help with? ")
+    date = input("Start date(yy-mm-dd): ")
+    date_0 = input("End date(yy-mm-dd): ")
+    time = input("Time(00:00): ")
     hour = time.split(":")
     complete_date = f'{date_0}T{hour[0]}:{hour[1]}:00+02:00'
     lis_dates = slot_time(service)
