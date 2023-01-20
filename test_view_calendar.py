@@ -20,7 +20,5 @@ class TestViewCalendar(unittest.TestCase):
         self.assertEqual(quickstart.end_month_monitor(day,lis_day,list_date),(2,8,[2,1,2,3,4,5,6,7]))
 
 
-
-
 if __name__=="__main__":
     unittest.main()

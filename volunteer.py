@@ -65,6 +65,12 @@ def volunteer(cred):
         elif hour[1] == "00":
             hour[1] = "30"
         
+        else:
+            hour[1] = str(int(hour[1])+30)
+            if int(hour[1]) > 60:
+                hour[1] = str(int(hour[1])-60)
+                hour[0] = str(int(hour[0])+1)
+        
 
         event = {
         'summary': title,
@@ -83,8 +89,8 @@ def volunteer(cred):
         ],
         'eventType':"focusTime",
         'attendees': [
-            {'email': 'charinz022@student.wethinkcode.co.za'},
-            # {'email': 'sbrin@example.com'},
+            {'email': email},
+            
         ],
         'reminders': {
             'useDefault': False,
