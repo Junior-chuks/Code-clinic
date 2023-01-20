@@ -1,0 +1,54 @@
+2023-01-19
+
+Code Clinic Calendar 7 days view
+
+Getting the upcoming 7 events
+Date 	 	time 		task
+
+2023-01-19 - 16:00:00+02:00 - booking 
+
+2023-01-19 - 17:00:00+02:00 - volunteer 
+
+2023-01-20 - 14:00:00+02:00 - Booking slot 
+
+2023-01-20 - 14:00:00+02:00 - Booking slot 
+
+2023-01-20 - 14:00:00+02:00 - Booking slot 
+
+2023-01-20 - 14:00:00+02:00 - Booking slot 
+
+2023-01-20 - 14:00:00+02:00 - Booking slot 
+
+2023 - 01 - 21 no event
+
+2023 - 01 - 22 no event
+
+2023 - 01 - 23 no event
+
+2023 - 01 - 24 no event
+
+2023 - 01 - 25 no event
+
+Student Calendar 7 days view
+
+Getting the upcoming 7 events
+Date 	 	time 		task
+
+2023-01-19 - 16:00:00+02:00 - booking 
+
+2023-01-19 - 17:00:00+02:00 - volunteer 
+
+2023 - 01 - 20 no event
+
+2023-01-21 - 14:30:00+02:00 - volunteer 
+
+2023-01-21 - 15:00:00+02:00 - vol 
+
+2023 - 01 - 22 no event
+
+2023-01-23 - 03:00:00+02:00 - vol 
+
+2023-01-24 - 15:00:00+02:00 - booked 
+
+2023-01-25 - 12:30:00+02:00 - volunteer 
+
