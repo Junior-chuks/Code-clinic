@@ -65,6 +65,11 @@ def volunteer(cred):
         elif hour[1] == "00":
             hour[1] = "30"
         
+        else:
+            hour[1] = str(int(hour[1])+30)
+            if int(hour[1]) > 60:
+                hour[1] = str(int(hour[1])-60)
+                hour[0] = str(int(hour[0])+1)
 
         event = {
         'summary': title,
