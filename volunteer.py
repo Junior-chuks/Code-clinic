@@ -83,8 +83,8 @@ def volunteer(cred):
         ],
         'eventType':"focusTime",
         'attendees': [
-            {'email': 'charinz022@student.wethinkcode.co.za'},
-            # {'email': 'sbrin@example.com'},
+            {'email': email},
+            
         ],
         'reminders': {
             'useDefault': False,
@@ -106,7 +106,7 @@ def slot_time(serv):
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         
     events_result = serv.events().list(calendarId='primary', timeMin=now,
-                                            maxResults=7, singleEvents=True,
+                                            singleEvents=True,
                                             orderBy='startTime').execute()
     events = events_result.get('items', [])
 
