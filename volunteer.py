@@ -17,8 +17,6 @@ def clinic_cred():
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
     return creds
     
-    volunteer(creds)
-
 
 def student_cred():
     creds = None
@@ -71,10 +69,10 @@ def volunteer(cred):
                 hour[0] = str(int(hour[0])+1)
 
         event = {
-        'summary': title,
-        'location': location,
-        'description': description,
-        'start': {
+        'Summary': title,
+        'Location': location,
+        'Description': description,
+        'Start': {
             'dateTime': f'{date}T{time}:00+02:00',
             'timeZone': 'Africa/Johannesburg',
         },
