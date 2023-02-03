@@ -2,6 +2,7 @@ import sys
 import quickstart
 import os.path
 import volunteer
+import cancel_volunteer
 
 terminal = sys.argv 
 
@@ -21,7 +22,10 @@ if terminal[1] == "volunteer":
     volunteer.slot_checker()
     quickstart.file_update(1)
 
-# if terminal[1] == "Volunteer":
+if terminal[1] == "cancel_volunteer":
+    cancel_volunteer.cancel_volunteer()
+    quickstart.file_update(1)
+    
 
 
 
