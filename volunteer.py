@@ -69,10 +69,10 @@ def volunteer(cred):
                 hour[0] = str(int(hour[0])+1)
 
         event = {
-        'Summary': title,
-        'Location': location,
-        'Description': description,
-        'Start': {
+        'summary': title,
+        'location': location,
+        'description': description,
+        'start': {
             'dateTime': f'{date}T{time}:00+02:00',
             'timeZone': 'Africa/Johannesburg',
         },
@@ -99,7 +99,6 @@ def volunteer(cred):
 
         event = service.events().insert(calendarId='primary', body=event).execute()
         print ('Event created: %s' % (event.get('htmlLink')))
-
 
     else :
         print("This time is already taken.Please choose another.")
