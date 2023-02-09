@@ -3,8 +3,6 @@ import quickstart
 from datetime import date 
 from io import StringIO
 from unittest.mock import patch
-import sys
-
 
 
 class TestViewCalendar(unittest.TestCase):

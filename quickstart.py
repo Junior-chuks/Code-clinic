@@ -3,7 +3,6 @@ from __future__ import print_function
 import datetime
 import os.path
 import sys
-import volunteer
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials

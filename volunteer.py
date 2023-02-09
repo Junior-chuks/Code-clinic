@@ -2,7 +2,6 @@
 import os.path
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 import datetime
 
 
@@ -18,8 +17,6 @@ def clinic_cred():
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
     return creds
     
-    volunteer(creds)
-
 
 def student_cred():
     creds = None
@@ -44,10 +41,10 @@ def volunteer(cred):
     # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
     # stored credentials.
     # description = input()
-    email = input("student email: ")
-    title = input("please type 'volunteer': ")
-    location = input("location: ")
-    description = input("what do you want help with? ")
+    email = input("Student email: ")
+    title = input("Please type 'volunteer: ")
+    location = input("Location: ")
+    description = input("What do you want help with? ")
     date = input("Start date(yy-mm-dd): ")
     date_0 = input("End date(yy-mm-dd): ")
     time = input("Time(00:00): ")
@@ -70,7 +67,6 @@ def volunteer(cred):
             if int(hour[1]) > 60:
                 hour[1] = str(int(hour[1])-60)
                 hour[0] = str(int(hour[0])+1)
-        
 
         event = {
         'summary': title,
