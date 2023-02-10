@@ -2,6 +2,7 @@
 import os.path
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 import datetime
 
 
@@ -15,6 +16,8 @@ def clinic_cred():
     # time.
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
     return creds
     
 

@@ -1,52 +1,48 @@
-2023-01-20
+Please click the link below to sign into Code Clinic calendar
+
+Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=172315925181-flplr16i14u6o9otss9k76488348qguv.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A45281%2F&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar&state=AEcLuaqzS4WCaVchk1Cb1NkGIW9bIG&access_type=offline
+2023-02-09
 
 Code Clinic Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023 - 02 - 9 no event
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023-02-10 - 10:00:00+02:00 - sd 
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023 - 02 - 11 no event
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023 - 02 - 12 no event
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023-02-13 - 12:30:00+02:00 - as 
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023-02-14 - 13:00:00+02:00 - valentines 
 
-2023-01-20 - 14:00:00+02:00 - Booking slot 
+2023-02-14 - 20:00:00+02:00 - valetines day 
 
-2023 - 01 - 21 no event
+2023 - 02 - 15 no event
 
-2023 - 01 - 22 no event
+Please click the link below to sign into your Student calendar
 
-2023 - 01 - 23 no event
-
-2023 - 01 - 24 no event
-
-2023 - 01 - 25 no event
-
-2023 - 01 - 26 no event
-
+Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=172315925181-flplr16i14u6o9otss9k76488348qguv.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A42491%2F&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar&state=TOk6nGcraZDMDGvQpB32t29J9LWWTV&access_type=offline
 Student Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023 - 01 - 20 no event
+2023 - 05 - 9 no event
 
-2023 - 01 - 21 no event
+2023-02-10 - 09:30:00+02:00 - Python with ta-Ryshan & maTshazi 
 
-2023 - 01 - 22 no event
+2023 - 05 - 11 no event
 
-2023 - 01 - 23 no event
+2023 - 05 - 12 no event
 
-2023 - 01 - 24 no event
+2023-02-13 - 09:30:00+02:00 - Python with us: Eliseezzle & Big man tingz Liam 
 
-2023 - 01 - 25 no event
+2023-02-14 - 09:30:00+02:00 - Ntobeezy & G-bash (Percy) 
 
-2023 - 01 - 26 no event
+2023 - 05 - 15 no event
 
