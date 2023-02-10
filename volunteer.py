@@ -45,9 +45,9 @@ def volunteer(cred):
     email = f'{user_name.lower()}@student.wethinkcode.co.za'
     title = input("Please type 'volunteer: ")
     location = input("Location: ")
-    description = input("What do you want help with? ")
-    date = input("Start date(yy-mm-dd): ")
-    date_0 = input("End date(yy-mm-dd): ")
+    
+    # date = input("Start date(yy-mm-dd): ")
+    date = input("Please select date(yy-mm-dd): ")
 
     while True:
         time = input("Time(00:00): ")
@@ -57,7 +57,7 @@ def volunteer(cred):
             continue
         break
 
-    complete_date = f'{date_0}T{hour[0]}:{hour[1]}:00+02:00'
+    complete_date = f'{date}T{hour[0]}:{hour[1]}:00+02:00'
     lis_dates = slot_time(service)
 
     if (complete_date,email) not in lis_dates :
@@ -79,13 +79,13 @@ def volunteer(cred):
         event = {
         'summary': title,
         'location': location,
-        'description': description,
+        'description': "Free session",
         'start': {
             'dateTime': f'{date}T{time}:00+02:00',
             'timeZone': 'Africa/Johannesburg',
         },
         'end': {
-            'dateTime': f'{date_0}T{hour[0]}:{hour[1]}:00+02:00',
+            'dateTime': f'{date}T{hour[0]}:{hour[1]}:00+02:00',
             'timeZone': 'Africa/Johannesburg',
         },
         'recurrence': [

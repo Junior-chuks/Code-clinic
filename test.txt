@@ -7,15 +7,15 @@ Code Clinic Calendar 7 days view
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023-02-10 - 10:00:00+02:00 - sd 
+2023 - 02 - 10 no event
 
 2023 - 02 - 11 no event
 
-2023 - 02 - 12 no event
-
-2023-02-13 - 12:00:00+02:00 - Volunteer 
+2023-02-12 - 12:00:00+02:00 - volunteer 
 
 2023-02-13 - 12:30:00+02:00 - as 
+
+2023-02-14 - 13:00:00+02:00 - vol 
 
 2023-02-14 - 13:00:00+02:00 - valentines 
 
@@ -32,15 +32,13 @@ Student Calendar 7 days view
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023-02-10 - 09:30:00+02:00 - Python with ta-Ryshan & maTshazi 
+2023 - 02 - 10 no event
 
 2023 - 02 - 11 no event
 
-2023 - 02 - 12 no event
+2023-02-12 - 12:00:00+02:00 - volunteer 
 
 2023-02-13 - 09:30:00+02:00 - Python with us: Eliseezzle & Big man tingz Liam 
-
-2023-02-13 - 12:00:00+02:00 - Volunteer 
 
 2023-02-13 - 12:30:00+02:00 - as 
 
