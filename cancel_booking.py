@@ -38,6 +38,17 @@ def event(serv):
     return events
 
 
+def cancel_booking(calendar_id, event_id, serv):
+    # Delete the event
+    #service = get_calendar_service()
+    try:
+        serv.events().delete(
+        calendarId=calendar_id,
+        eventId=event_id,
+        ).execute()
+    except googleapiclient.errors.HttpError:
+        print("Failed to delete event")
+    print("Event deleted")
 
 
 if __name__ == '__main__':
