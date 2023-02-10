@@ -35,12 +35,11 @@ def calendar(cred):
 
 
 def volunteer(cred):
+
     service = calendar(cred)
-    # Refer to the Python quickstart on how to setup the environment:
-    # https://developers.google.com/calendar/quickstart/python
-    # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-    # stored credentials.
-    # description = input()
+    current_time = datetime.datetime.now().strftime("%H:%M")
+    time_split = current_time.split(":")
+    
     user_name = input("Student user name: ")
     email = f'{user_name.lower()}@student.wethinkcode.co.za'
     title = input("Please type 'volunteer: ")
@@ -48,8 +47,15 @@ def volunteer(cred):
     description = input("What do you want help with? ")
     date = input("Start date(yy-mm-dd): ")
     date_0 = input("End date(yy-mm-dd): ")
-    time = input("Time(00:00): ")
-    hour = time.split(":")
+
+    while True:
+        time = input("Time(00:00): ")
+        hour = time.split(":")
+        if time_split[0] == hour[0] and time_split[1] >= hour[1] or hour[0] < time_split[0]:
+            print("This time has already passed.")
+            continue
+        break
+
     complete_date = f'{date_0}T{hour[0]}:{hour[1]}:00+02:00'
     lis_dates = slot_time(service)
 

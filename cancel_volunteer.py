@@ -78,8 +78,8 @@ def email_verification():
 
 
 def email_request():
-        user_name = input("\n-------------------------------\nPlease enter your student user name:")
-        print("-------------------------------")
+        user_name = input("\n------------------------------------\nPlease enter your student user name:")
+        print("------------------------------------")
         email = f'{user_name.lower()}@student.wethinkcode.co.za'
         return email
 
@@ -122,7 +122,7 @@ def slot_display(data_structure):
 
 def choose_slot(data):
         number = int(input("Please choose a number ?"))
-        if len(data) < number:
+        if len(data) < number or number <= 0 :
                 print("The number you chose is not on the list.")
                 choose_slot(data)
         indx = number-1
@@ -130,9 +130,10 @@ def choose_slot(data):
         
 
 def cancel_volunteer(data,index,service):
+        print("Cancelling volunteer slot #########")
         id = data[index][3]
         service.events().delete(calendarId='primary', eventId=id).execute()
-        print("The slot has been successfuly deleted.")
+        print("The slot has been successfuly cancelled.")
 
 
 
