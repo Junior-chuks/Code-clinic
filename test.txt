@@ -1,42 +1,52 @@
-2023-02-01
+Please click the link below to sign into Code Clinic calendar
+
+2023-02-10
 
 Code Clinic Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023 - 02 - 1 no event
+2023-02-10 - 10:00:00+02:00 - sd 
 
-2023 - 02 - 2 no event
+2023 - 02 - 11 no event
 
-2023 - 02 - 3 no event
+2023 - 02 - 12 no event
 
-2023 - 02 - 4 no event
+2023-02-13 - 12:00:00+02:00 - Volunteer 
 
-2023 - 02 - 5 no event
+2023-02-13 - 12:30:00+02:00 - as 
 
-2023 - 02 - 6 no event
+2023-02-14 - 13:00:00+02:00 - valentines 
 
-2023 - 02 - 7 no event
+2023-02-14 - 20:00:00+02:00 - valetines day 
+
+2023 - 02 - 15 no event
+
+2023 - 02 - 16 no event
+
+Please click the link below to sign into your Student calendar
 
 Student Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023 - 02 - 1 no event
+2023-02-10 - 09:30:00+02:00 - Python with ta-Ryshan & maTshazi 
 
-2023 - 02 - 2 no event
+2023 - 02 - 11 no event
 
-2023-02-03 - 09:30:00+02:00 - Python workshop with Cuan and Nombuso 
+2023 - 02 - 12 no event
 
-2023-02-03 - 10:00:00+02:00 - We think code- Durban online group 1 with Carmen Thomas  
+2023-02-13 - 09:30:00+02:00 - Python with us: Eliseezzle & Big man tingz Liam 
 
-2023 - 02 - 4 no event
+2023-02-13 - 12:00:00+02:00 - Volunteer 
 
-2023 - 02 - 5 no event
+2023-02-13 - 12:30:00+02:00 - as 
 
-2023-02-06 - 09:30:00+02:00 - Python workshop with Rieces-Pieces & Stevovo 
+2023-02-14 - 09:30:00+02:00 - Ntobeezy & G-bash (Percy) 
 
-2023-02-07 - 09:30:00+02:00 - Python with Al-the-Mash & maRadebe 
+2023 - 02 - 15 no event
+
+2023 - 02 - 16 no event
 
