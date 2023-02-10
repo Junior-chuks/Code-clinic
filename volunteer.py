@@ -38,8 +38,9 @@ def volunteer(cred):
 
     service = calendar(cred)
     current_time = datetime.datetime.now().strftime("%H:%M")
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
     time_split = current_time.split(":")
-    
+
     user_name = input("Student user name: ")
     email = f'{user_name.lower()}@student.wethinkcode.co.za'
     title = input("Please type 'volunteer: ")
@@ -51,7 +52,7 @@ def volunteer(cred):
     while True:
         time = input("Time(00:00): ")
         hour = time.split(":")
-        if time_split[0] == hour[0] and time_split[1] >= hour[1] or hour[0] < time_split[0]:
+        if time_split[0] == hour[0] and time_split[1] >= hour[1] and date == current_date or hour[0] < time_split[0] and current_date == date:
             print("This time has already passed.")
             continue
         break
@@ -59,7 +60,7 @@ def volunteer(cred):
     complete_date = f'{date_0}T{hour[0]}:{hour[1]}:00+02:00'
     lis_dates = slot_time(service)
 
-    if complete_date not in lis_dates:
+    if (complete_date,email) not in lis_dates :
         if hour[1] == "30":
             hour[1] = "00"
             if hour[0] == "23":
@@ -121,7 +122,7 @@ def slot_time(serv):
 
     lis_dates = []
     for event in events:
-        lis_dates.append(event['start'].get('dateTime', event['start'].get('date')))
+        lis_dates.append((event['start'].get('dateTime', event['start'].get('date')),event["attendees"][0]["email"]))
     return lis_dates
 
 
@@ -134,3 +135,4 @@ def slot_checker():
 if __name__ == "__main__":
     
     slot_checker()
+    # print(slot_time(calendar(clinic_cred())))
