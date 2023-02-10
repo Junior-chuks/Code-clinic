@@ -43,7 +43,8 @@ def volunteer(cred):
     # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
     # stored credentials.
     # description = input()
-    email = input("Student email: ")
+    user_name = input("Student user name: ")
+    email = f'{user_name.lower()}@student.wethinkcode.co.za'
     title = input("Please type 'volunteer: ")
     location = input("Location: ")
     description = input("What do you want help with? ")
