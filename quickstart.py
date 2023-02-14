@@ -242,9 +242,11 @@ def view_calendar(m):
     if os.path.exists('test.txt') :
         with open("test.txt","r") as g :
             date = g.readline().strip("\n")
+       
     
     if not os.path.exists('test.txt'):
         file_update(m)
+       
     
     elif date != today  :
         file_update(m)
@@ -258,10 +260,27 @@ def file_update(n):
         n-=1
         view_calendar(n)
         sys.stdout = original_stdout
-    
-        
-        
+    loader_animation()
 
+
+def loader_animation():
+    import time
+    import sys
+    print("\nDownloading file:")
+
+
+    #animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+    animation = ["[■□□□□□□□□□ 10%]","[■■□□□□□□□□ 20%]", "[■■■□□□□□□□ 30%]", "[■■■■□□□□□□ 40%]",
+                "[■■■■■□□□□□ 50%]", "[■■■■■■□□□□ 60%]", "[■■■■■■■□□□ 70%]", "[■■■■■■■■□□ 80%]",
+                "[■■■■■■■■■□ 90%]", "[■■■■■■■■■■ 100%]"]
+
+    for i in range(len(animation)):
+        time.sleep(0.2)
+        sys.stdout.write("\r" + animation[i % len(animation)])
+        sys.stdout.flush()
+
+    print("\nFile download complete.")
+    
 
 if __name__ == '__main__':
     # view_calendar(1)

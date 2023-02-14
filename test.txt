@@ -1,19 +1,9 @@
-Please click the link below to sign into Code Clinic calendar
-
-2023-02-10
+2023-02-14
 
 Code Clinic Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
-
-2023 - 02 - 10 no event
-
-2023 - 02 - 11 no event
-
-2023-02-12 - 12:00:00+02:00 - volunteer 
-
-2023-02-13 - 12:30:00+02:00 - as 
 
 2023-02-14 - 13:00:00+02:00 - vol 
 
@@ -25,26 +15,30 @@ Date 	 	time 		task
 
 2023 - 02 - 16 no event
 
-Please click the link below to sign into your Student calendar
+2023 - 02 - 17 no event
+
+2023 - 02 - 18 no event
+
+2023 - 02 - 19 no event
+
+2023 - 02 - 20 no event
 
 Student Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023 - 02 - 10 no event
-
-2023 - 02 - 11 no event
-
-2023-02-12 - 12:00:00+02:00 - volunteer 
-
-2023-02-13 - 09:30:00+02:00 - Python with us: Eliseezzle & Big man tingz Liam 
-
-2023-02-13 - 12:30:00+02:00 - as 
-
-2023-02-14 - 09:30:00+02:00 - Ntobeezy & G-bash (Percy) 
+2023 - 02 - 14 no event
 
 2023 - 02 - 15 no event
 
 2023 - 02 - 16 no event
+
+2023 - 02 - 17 no event
+
+2023 - 02 - 18 no event
+
+2023 - 02 - 19 no event
+
+2023 - 02 - 20 no event
 

@@ -52,7 +52,7 @@ def volunteer(cred):
     while True:
         time = input("Time(00:00): ")
         hour = time.split(":")
-        if time_split[0] == hour[0] and time_split[1] >= hour[1] and date == current_date or hour[0] < time_split[0] and current_date == date:
+        if time_split[0] == hour[0] and time_split[1] >= hour[1] and date == current_date or hour[0] < time_split[0] and date == current_date:
             print("This time has already passed.")
             continue
         break
@@ -106,7 +106,7 @@ def volunteer(cred):
         }
 
         event = service.events().insert(calendarId='primary', body=event).execute()
-        print ('Event created: %s' % (event.get('htmlLink')))
+        print ('Volunteer slot created: %s' % (event.get('htmlLink')))
 
     else :
         print("This time is already taken.Please choose another.")
@@ -135,4 +135,5 @@ def slot_checker():
 if __name__ == "__main__":
     
     slot_checker()
-    # print(slot_time(calendar(clinic_cred())))
+    
+    
