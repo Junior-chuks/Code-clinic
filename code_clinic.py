@@ -3,12 +3,13 @@ import quickstart
 import os.path
 import volunteer
 
+
 terminal = sys.argv 
 
 if terminal[1] == "view_calendar":
     quickstart.view_calendar(1)
 
-if terminal[1] == "login":
+elif terminal[1] == "login":
     if os.path.exists('tokens.json') :
         print("Already logged in")
     
@@ -17,11 +18,10 @@ if terminal[1] == "login":
         print("Login successful")
 
 
-if terminal[1] == "volunteer":
+elif terminal[1] == "volunteer":
     volunteer.slot_checker()
     quickstart.file_update(1)
 
-# if terminal[1] == "Volunteer":
 
 
 
