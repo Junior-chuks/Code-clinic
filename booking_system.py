@@ -77,3 +77,18 @@ def booker(service,data,email):
     # Print the updated date.
     # print (updated_event['updated'])
     print("Slot successfully booked")
+
+
+
+def booking_engine():
+    email = email_request()
+    serv = calendar()
+    data = list_of_vol_slot(email,serv)
+    slot_display(data)
+    booker(serv,data,email)
+
+    pass
+
+
+if __name__=="__main__":
+    booking_engine()
