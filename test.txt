@@ -1,16 +1,10 @@
-2023-02-14
+2023-02-15
 
 Code Clinic Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023-02-14 - 13:00:00+02:00 - vol 
-
-2023-02-14 - 13:00:00+02:00 - valentines 
-
-2023-02-14 - 20:00:00+02:00 - valetines day 
-
 2023 - 02 - 15 no event
 
 2023 - 02 - 16 no event
@@ -22,14 +16,14 @@ Date 	 	time 		task
 2023 - 02 - 19 no event
 
 2023 - 02 - 20 no event
+
+2023 - 02 - 21 no event
 
 Student Calendar 7 days view
 
 Getting the upcoming 7 events
 Date 	 	time 		task
 
-2023 - 02 - 14 no event
-
 2023 - 02 - 15 no event
 
 2023 - 02 - 16 no event
@@ -41,4 +35,6 @@ Date 	 	time 		task
 2023 - 02 - 19 no event
 
 2023 - 02 - 20 no event
+
+2023 - 02 - 21 no event
 

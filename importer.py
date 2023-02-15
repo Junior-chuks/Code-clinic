@@ -4,7 +4,7 @@ from importlib import import_module
 def dynamic_import(Name):
     terminal = sys.argv 
 
-    if terminal[1] == "help":
+    if len(terminal) == 1 or terminal[1] == "help":
         Name = "help"
         return import_module(Name)
 

@@ -2,10 +2,16 @@ from quickstart import *
 
 
 def email_request():
-    user_name = input("\n------------------------------------\nPlease enter your student user name:")
-    print("------------------------------------")
-    email = f'{user_name.lower()}@student.wethinkcode.co.za'
-    return email
+    user_name = input("\n+------------------------------------+\n|Please enter your student user name: ")
+    print("+------------------------------------+")
+
+    name_ending = user_name[-3:]
+    if name_ending == "022" and (len(user_name) == 9 or len(user_name) == 10 or len(user_name) == 11 or len(user_name) == 12) :
+        email = f'{user_name.lower()}@student.wethinkcode.co.za'
+        return email
+
+    print("\nInvalid student user name, please try again.")
+    email_request()
 
 
 def calendar ():
@@ -84,10 +90,13 @@ def booking_engine():
     email = email_request()
     serv = calendar()
     data = list_of_vol_slot(email,serv)
-    slot_display(data)
-    booker(serv,data,email)
+    if len(data) > 0 :
+        slot_display(data)
+        booker(serv,data,email)
+    else:
+        print("Sorry but you have no available slots to book. :(")
+        return len(data)
 
-    pass
 
 if __name__=="__main__":
     booking_engine()

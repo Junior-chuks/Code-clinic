@@ -9,7 +9,7 @@ file = dynamic_import(None)
 
 terminal = sys.argv 
 
-if terminal[1] == "help":
+if len(terminal)== 1 or terminal[1] == "help" :
     file.helper()
 
 

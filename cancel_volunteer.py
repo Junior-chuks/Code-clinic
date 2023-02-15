@@ -7,10 +7,15 @@ def email_verification():
 
 
 def email_request():
-        user_name = input("\n------------------------------------\nPlease enter your student user name:")
-        print("------------------------------------")
-        email = f'{user_name.lower()}@student.wethinkcode.co.za'
-        return email
+        user_name = input("\n+------------------------------------+\nPlease enter your student user name: ")
+        print("+------------------------------------+")
+        name_ending = user_name[-3:]
+        if name_ending == "022" and (len(user_name) == 9 or len(user_name) == 10 or len(user_name) == 11 or len(user_name) == 12) :
+                email = f'{user_name.lower()}@student.wethinkcode.co.za'
+                return email
+
+        print("\nInvalid student user name, please try again.")
+        email_request()
 
 
 def list_of_vol_slot(email):
