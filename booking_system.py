@@ -49,3 +49,11 @@ def slot_display(data_structure):
             if date == data_structure[-1][0]:
                     print("-------------------------------------------------------")
             num+=1
+
+def choose_slot(data):
+    number = int(input("Please choose a number ?"))
+    if len(data) < number or number <= 0 :
+            print("The number you chose is not on the list.")
+            choose_slot(data)
+    indx = number-1
+    return indx       
