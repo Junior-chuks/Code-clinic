@@ -57,3 +57,23 @@ def choose_slot(data):
             choose_slot(data)
     indx = number-1
     return indx       
+
+
+def booker(service,data,email):
+
+    indx = choose_slot(data)
+    id = data[indx][3]
+    description = input("\nWhat do you want help with? ")
+    # First retrieve the event from the API.
+    event = service.events().get(calendarId='primary', eventId=id).execute()
+
+    event['summary'] = 'Booked'
+    event['description'] = description
+    attnedees = event['attendees']
+    attnedees.append({"email":email})
+
+    updated_event = service.events().update(calendarId='primary', eventId=event['id'], body=event).execute()
+
+    # Print the updated date.
+    # print (updated_event['updated'])
+    print("Slot successfully booked")
