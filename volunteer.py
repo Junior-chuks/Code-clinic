@@ -2,6 +2,8 @@
 import os.path
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.auth.transport.requests import Request
 import datetime
 
 
@@ -15,6 +17,8 @@ def clinic_cred():
     # time.
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
     return creds
     
 
@@ -41,7 +45,8 @@ def volunteer(cred):
     # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
     # stored credentials.
     # description = input()
-    email = input("Student email: ")
+    user_name = input("Student user name: ")
+    email = f'{user_name.lower()}@student.wethinkcode.co.za'
     title = input("Please type 'volunteer: ")
     location = input("Location: ")
     description = input("What do you want help with? ")
@@ -69,10 +74,10 @@ def volunteer(cred):
                 hour[0] = str(int(hour[0])+1)
 
         event = {
-        'Summary': title,
-        'Location': location,
-        'Description': description,
-        'Start': {
+        'summary': title,
+        'location': location,
+        'description': description,
+        'start': {
             'dateTime': f'{date}T{time}:00+02:00',
             'timeZone': 'Africa/Johannesburg',
         },

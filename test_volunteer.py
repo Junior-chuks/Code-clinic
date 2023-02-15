@@ -9,5 +9,7 @@ class Test_Volunteer(unittest.TestCase):
             #user_eve = vs(user_event)
         output = out.getvalue().strip()
         self.assertEqual('confirmed\nconfirmed', output)
+
+        
 if __name__=="__main__":
     unittest.main()
