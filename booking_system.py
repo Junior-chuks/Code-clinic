@@ -38,3 +38,14 @@ def list_of_vol_slot(email,service):
                     lis.append((date_and_time[0],date_and_time[1],title,id))
 
     return lis
+
+
+def slot_display(data_structure):
+    print("Availble Slots :\n-------------------------------------------------------")
+    print("Date             |Time                   |Task")
+    num = 1
+    for date,time,title,id in data_structure:
+            print("-------------------------------------------------------\n",str(num)+")",date,"\t","|"+time,"\t","|"+title)
+            if date == data_structure[-1][0]:
+                    print("-------------------------------------------------------")
+            num+=1
