@@ -1,5 +1,5 @@
 import unittest
-from volunteer import volunteer as vs
+from volonteer import volunteer as vs
 from test_base import captured_io
 from io import StringIO
 class Test_Volunteer(unittest.TestCase):
@@ -9,7 +9,6 @@ class Test_Volunteer(unittest.TestCase):
             #user_eve = vs(user_event)
         output = out.getvalue().strip()
         self.assertEqual('confirmed\nconfirmed', output)
-
-        
 if __name__=="__main__":
     unittest.main()
+    
