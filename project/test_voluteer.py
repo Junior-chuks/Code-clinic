@@ -1,5 +1,5 @@
 import unittest
-from book_event import volunteer_slot as vs
+from volonteer import volunteer as vs
 from test_base import captured_io
 from io import StringIO
 class Test_Volunteer(unittest.TestCase):
@@ -11,3 +11,4 @@ class Test_Volunteer(unittest.TestCase):
         self.assertEqual('confirmed\nconfirmed', output)
 if __name__=="__main__":
     unittest.main()
+    
