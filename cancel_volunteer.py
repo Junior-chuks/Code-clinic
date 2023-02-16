@@ -7,6 +7,9 @@ def email_verification():
 
 
 def email_request():
+        """Ask user for their student user name
+                to construct a full email
+        return : email | None"""
         user_name = input("\n+------------------------------------+\nPlease enter your student user name: ")
         print("+------------------------------------+")
         name_ending = user_name[-3:]
@@ -19,6 +22,12 @@ def email_request():
 
 
 def list_of_vol_slot(email):
+        """
+        Retrieves and selects desired data from the calendar
+                stores the retrieved and selected data in an empty list
+        Param: email 
+        return: list,service
+        """
         creds = None
         if os.path.exists('token.json'):
                 creds = Credentials.from_authorized_user_file('token.json', SCOPES)
@@ -44,6 +53,10 @@ def list_of_vol_slot(email):
 
 
 def slot_display(data_structure):
+        """
+        Displays data to the user
+        Param: data_structure
+        """
         print("Your Slots :\n-------------------------------------------------------")
         print("Date             |Time                   |Task")
         num = 1
@@ -55,6 +68,12 @@ def slot_display(data_structure):
         
 
 def choose_slot(data):
+        """
+        Asks user for a number 
+        decrements the users number 
+        Param: data
+        return: integer
+        """
 
         number = int(input("Please choose a number ?"))
         if len(data) < number or number <= 0 :
@@ -65,6 +84,10 @@ def choose_slot(data):
         
 
 def cancel_volunteer(data,index,service):
+        """
+        Cancels the user requested slot and displays a successful messsage to the user
+        Param: service, data, email
+        """
 
         print("Cancelling volunteer slot... ")
         loader_animation()
@@ -77,6 +100,9 @@ k='#'
 j=0
 k='#'
 def loader_animation():
+        """
+        Creates a loading animation.
+        """
         from time import sleep
 
         def fixed_space(i,array):
@@ -115,6 +141,10 @@ def loader_animation():
 
 
 def cancel_engine():
+        """
+        Calls all the required functions to run the programme
+        return: int | None
+        """
         user_email = email_request()
         data,servicc = list_of_vol_slot(user_email)
 
@@ -124,7 +154,7 @@ def cancel_engine():
                 cancel_volunteer(data,indx,servicc)
         else:
                 print("Sorry but you have no slots to cancel")
-        return len(data)
+                return len(data)
 
 
 if __name__=="__main__":

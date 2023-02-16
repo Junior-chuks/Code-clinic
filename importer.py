@@ -2,6 +2,11 @@ import sys
 from importlib import import_module
 
 def dynamic_import(Name):
+    """
+    Selects files to import based off the commands found in the terminal
+    Param: Name
+    return: Import_module(Name)
+    """
     terminal = sys.argv 
 
     if len(terminal) == 1 or terminal[1] == "help":
