@@ -18,12 +18,11 @@ elif terminal[1] == "view_calendar":
 
 
 elif terminal[1] == "login":
-    if os.path.exists('tokens.json') :
-        print("Already logged in")
-    
-    else:
-        quickstart.file_update(1)
-        print("Login successful")
+    quickstart.login()
+
+
+elif terminal[1] == "logout":
+    quickstart.logout()
 
 
 elif terminal[1] == "volunteer":

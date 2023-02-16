@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import datetime
 import os.path
+import os as so
 import sys
 
 from google.auth.transport.requests import Request
@@ -26,7 +27,10 @@ def main_clinic():
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
-        print("Please click the link below to sign into Code Clinic calendar\n")
+        print("Please click the link below to sign into Code Clinic calendar\n"
+                "Use the following login details:\n"
+                "Email: codeclinic123@gmail.com\n"
+                "Password: codeclinc_1")
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
@@ -233,41 +237,77 @@ def end_month_monitor(dai,lis_day,lis_date):
     return month,lenght,lis_day
    
         
-def view_calendar(m):
+def view_calendar(count):
     main_clinic()
     main_student()
 
     today = str(datetime.date.today())
 
-    if os.path.exists('test.txt') :
-        with open("test.txt","r") as g :
-            date = g.readline().strip("\n")
+    if os.path.exists('calendar.txt') :
+        with open("calendar.txt","r") as file :
+            date = file.readline().strip("\n")
        
     
-    if not os.path.exists('test.txt'):
-        file_update(m)
+    if not os.path.exists('calendar.txt'):
+        file_update(count)
        
     
     elif date != today  :
-        file_update(m)
+        file_update(count)
 
 
 def file_update(n):
+    if os.path.exists("calendar.txt"):
+
+        mess = "\nUpdating file:"
+        mess_2 = "\nFile update complete."
+
+    else:
+        mess = "\nDownloading file:"
+        mess_2 = "\nFile download complete."
+
     original_stdout = sys.stdout
     if n == 0:
        return  
-    with open("test.txt","w") as sys.stdout:
+    with open("calendar.txt","w") as sys.stdout:
         n-=1
         view_calendar(n)
         sys.stdout = original_stdout
-    loader_animation()
+    loader_animation(mess,mess_2)
 
 
-def loader_animation():
+def login():
+    if os.path.exists('tokens.json') :
+        print("Already logged in")
+    
+    else:
+        blockPrint()
+        file_update(1)
+        enablePrint()
+        print("Login successful. :)")
+
+
+def blockPrint():
+    sys.stdout = open(so.devnull, 'w')
+
+
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
+
+def logout():
+    if os.path.exists("tokens.json"):
+        so.remove("tokens.json")
+        so.remove("token.json")
+        print("Logout successful. :)")
+    else:
+        print("Already logged out.")
+
+
+def loader_animation(message,message_2):
     import time
     import sys
-    print("\nDownloading file:")
-
+    print(message)
 
     #animation = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
     animation = ["[■□□□□□□□□□ 10%]","[■■□□□□□□□□ 20%]", "[■■■□□□□□□□ 30%]", "[■■■■□□□□□□ 40%]",
@@ -279,7 +319,7 @@ def loader_animation():
         sys.stdout.write("\r" + animation[i % len(animation)])
         sys.stdout.flush()
 
-    print("\nFile download complete.")
+    print(message_2)
     
 
 if __name__ == '__main__':
@@ -287,4 +327,3 @@ if __name__ == '__main__':
     # file_update(1)
     b = main_clinic()
     # volunteer.volunteer(b)
-    

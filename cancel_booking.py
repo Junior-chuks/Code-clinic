@@ -136,7 +136,7 @@ def cancel_engine():
         slot_display(data)
         booker(serv,data,email)
     else:
-        print("Sorry but you no bookings to cancel.")
+        print("Sorry but you have no bookings to cancel.")
     return len(data)
 
 
