@@ -120,3 +120,20 @@ def loader_animation():
     for i in array:
         ani(i,array)
         sleep(0.1)
+
+
+def cancel_engine():
+    email = email_request()
+    serv = calendar()
+    data = list_of_vol_slot(email,serv)
+
+    if len(data) > 0 :
+        slot_display(data)
+        booker(serv,data,email)
+    else:
+        print("Sorry but you no bookings to cancel.")
+    return len(data)
+
+
+if __name__=="__main__":
+    cancel_engine()
