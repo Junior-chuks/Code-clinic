@@ -50,35 +50,35 @@ def slot_display(data_structure):
                 num+=1
         
 
-# def choose_slot(data):
+def choose_slot(data):
 
-#         number = int(input("Please choose a number ?"))
-#         if len(data) < number or number <= 0 :
-#                 print("The number you chose is not on the list.")
-#                 choose_slot(data)
-#         indx = number-1
-#         return indx
+        number = int(input("Please choose a number ?"))
+        if len(data) < number or number <= 0 :
+                print("The number you chose is not on the list.")
+                choose_slot(data)
+        indx = number-1
+        return indx
         
 
-# def cancel_volunteer(data,index,service):
+def cancel_volunteer(data,index,service):
 
-#         print("Cancelling volunteer slot... ")
-#         loader_animation()
-#         id = data[index][3]
-#         service.events().delete(calendarId='primary', eventId=id).execute()
-#         print("The slot has been successfuly cancelled.")
+        print("Cancelling volunteer slot... ")
+        loader_animation()
+        id = data[index][3]
+        service.events().delete(calendarId='primary', eventId=id).execute()
+        print("The slot has been successfuly cancelled.")
 
 
-# k='#'
-# j=0
-# k='#'
-# def loader_animation():
-#         from time import sleep
+k='#'
+j=0
+k='#'
+def loader_animation():
+        from time import sleep
 
-#         def fixed_space(i,array):
-#                 g=(' '*len(str(len(array))))
-#                 g=g.replace(' ','',len(str(int(i))))
-#                 return g
+        def fixed_space(i,array):
+                g=(' '*len(str(len(array))))
+                g=g.replace(' ','',len(str(int(i))))
+                return g
 
 
 #         def ani(i,array):
