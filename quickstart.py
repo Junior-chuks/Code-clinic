@@ -384,11 +384,5 @@ def loader_animation(message,message_2):
 if __name__ == '__main__':
     view_calendar(1)
     # file_update(1)
-<<<<<<< HEAD
-    # b = main_clinic()
-    # volunteer.volunteer(b)
-    
-=======
     b = main_clinic()
     # volunteer.volunteer(b)
->>>>>>> charinz022
