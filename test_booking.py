@@ -1,7 +1,7 @@
-# import unittest
-# import os
-# import booking_system as cb
-# from unittest.mock import patch
+import unittest
+import os
+import booking_system as cb
+from unittest.mock import patch
 
 
 
