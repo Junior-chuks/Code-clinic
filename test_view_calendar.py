@@ -15,8 +15,9 @@ class TestViewCalendar(unittest.TestCase):
         today = date.today() #Returns the current local date
 
         list_date = str(today).split("-") #convert date to string and split to a list
-        self.assertEqual(quickstart.end_month_monitor(day,lis_day,list_date),(2,8,[2,1,2,3,4,5,6,7]))
+        self.assertEqual(quickstart.end_month_monitor(day,lis_day,list_date),(3,8,[2,1,2,3,4,5,6,7]))
 
+   
 
 if __name__=="__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 import sys
 from contextlib import contextmanager
-from io import StringIO@contextmanager
+from io import StringIO
 def captured_io(stdin):
     """Capture standard input and output, as well as standard error, and make that available for testing"""
     new_out, new_err, new_input = StringIO(), StringIO(), stdin

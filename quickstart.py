@@ -4,6 +4,7 @@ import datetime
 import os.path
 import os as so
 import sys
+from tabulate import tabulate
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -116,6 +117,7 @@ def upcoming_event(events):
         
     dai = 0
 
+    current_time = str(datetime.datetime.now().strftime("%H:%M"))
     current_date  = str(datetime.date.today())
     lis_date = current_date.split("-")
     dai += int(lis_date[-1])
@@ -132,7 +134,7 @@ def upcoming_event(events):
         date_time = start.split("T")
         
         if len(date_time) == 2:
-            events_set = " - ".join([date_time[0],date_time[1], event['summary']])
+            events_set = [date_time[0],date_time[1], event['summary']]
             
         else:
             events_set = " - ".join([date_time[0]," ** ** ** ", event['summary']])
@@ -141,14 +143,15 @@ def upcoming_event(events):
         lis_events.append(events_set)
         day_2.append(day_1)
 
+    lis_data = []
     while True:
         if lenght >0 :
             next_day = [day[0],day[1],str(lis_day[indexes])]
         else:
             next_day = [day[0],str(month),str(lis_day[indexes])]
         
-        if days == 7 :
-            print("Date \t \ttime \t\ttask\n")
+        # if days == 7 :
+        #     print("Date \t \ttime \t\ttask\n")
         
         if  lis_day[indexes] == day_2[indexe] :
             
@@ -157,7 +160,8 @@ def upcoming_event(events):
 
             for i in day_2 :
                 if i == lis_day[indexes]:
-                    print(lis_events[n],"\n")
+                    # print(lis_events[n],"\n")
+                    lis_data.append(lis_events[n])
                     t+=1
                     n+=1 
             if len(day_2) > 1 or t>0 :
@@ -166,13 +170,15 @@ def upcoming_event(events):
                     indexe -=1
             
         else:
-            print(" - ".join(next_day),"no event\n")
+            # print(" - ".join(next_day),"no event\n")
+            lis_data.append([" - ".join(next_day),current_time,"no event\n"])
 
         indexes+=1
         days -=1
         lenght-=1
         if days == 0:
             break
+    print(tabulate(lis_data,["Date","Time ","Task"],"double_outline"))
 
 
 def no_upcoming_event(events):
@@ -184,6 +190,7 @@ def no_upcoming_event(events):
         dai = 0
         
         current_date  = str(datetime.date.today())
+        current_time = str(datetime.datetime.now().strftime("%H:%M"))
         lis_date = current_date.split("-")
         
         dai += int(lis_date[-1])
@@ -195,6 +202,8 @@ def no_upcoming_event(events):
 
         if not events:
             day = lis_date[:3]
+
+        lis_data = []
         while True:
             
             if lenght >0 :
@@ -202,17 +211,20 @@ def no_upcoming_event(events):
             else:
                 next_day = [day[0],str(month),str(lis_day[indexes])]
             
-            if days == 7 :
-                print("Date \t \ttime \t\ttask\n")
+            # if days == 7 :
+            #     print("Date \t \ttime \t\ttask\n")
+            #     lis_date.append(["Date","time ","task"])
             
-            print(" - ".join(next_day)+" no event\n")
+            # print(" - ".join(next_day)+" no event\n")
+            lis_data.append([" - ".join(next_day),current_time," no event"])
             
             indexes+=1
             days -=1
             lenght -= 1
             if days == 0:
                 break
-
+        print(tabulate(lis_data,["Date","Time ","Task"],"double_outline"))
+    
 
 def end_month_monitor(dai,lis_day,lis_date):
     """

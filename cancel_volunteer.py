@@ -57,13 +57,13 @@ def slot_display(data_structure):
         Displays data to the user
         Param: data_structure
         """
-        print("Your Slots :\n-------------------------------------------------------")
-        print("Date             |Time                   |Task")
+        print("|Your Slots :\n+-------------------------------------------------------+")
+        print("|Date             |Time                   |Task")
         num = 1
         for date,time,title,id in data_structure:
-                print("-------------------------------------------------------\n",str(num)+")",date,"\t","|"+time,"\t","|"+title)
+                print("+-------------------------------------------------------+\n|",str(num)+")",date,"\t","|"+time,"\t","|"+title)
                 if date == data_structure[-1][0]:
-                        print("-------------------------------------------------------")
+                        print("+-------------------------------------------------------+")
                 num+=1
         
 
@@ -75,7 +75,7 @@ def choose_slot(data):
         return: integer
         """
 
-        number = int(input("Please choose a number ?"))
+        number = int(input("Please choose a number :"))
         if len(data) < number or number <= 0 :
                 print("The number you chose is not on the list.")
                 choose_slot(data)
