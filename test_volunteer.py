@@ -1,15 +1,26 @@
 import unittest
-from volunteer import volunteer as vs
-from test_base import captured_io
+import io
+import volunteer
 from io import StringIO
-class Test_Volunteer(unittest.TestCase):
-    def test_voloteer(self):
-        with captured_io(StringIO()) as (out,err):
-            result_code_event = vs("primary","primary")
-            #user_eve = vs(user_event)
-        output = out.getvalue().strip()
-        self.assertEqual('confirmed\nconfirmed', output)
+import googleapiclient.discovery
 
+
+class Test_Volunteer(unittest.TestCase):
+
+    def test_calendar(self):
+        
+        cred = volunteer.clinic_cred()
+        cal = volunteer.calendar(cred)
+        
+        self.assertEqual(type(cal),  googleapiclient.discovery.Resource)
+
+
+    def test_slot_time(self):
+        cred = volunteer.clinic_cred()
+        service = volunteer.calendar(cred)
+        data = volunteer.slot_time(service)
+        self.assertEqual(type(data),list)
+        
         
 if __name__=="__main__":
     unittest.main()

@@ -3,7 +3,6 @@ import cancel_volunteer
 from unittest.mock import patch
 from io import StringIO
 import io
-from test_base import captured_io
 import builtins
 import mock
 from unittest.mock import MagicMock,patch
@@ -16,10 +15,6 @@ TDD for cancelling a volunteer slot
 """
 
 class Test_Cancel_Volunteer(unittest.TestCase):
-        # def test_cancel_volunteer(self):
-            # data,email = cancel_volunteer.list_of_vol_slot("sizulu")
-            #  results = cancel_volunteer.cancel_volunteer(data,0,email)
-        # #         self.assertTrue(results)
         def test_cancel_volunteer(self):
             username="sizulum022"
             with mock.patch.object(builtins, 'input', lambda _: username):
@@ -34,7 +29,7 @@ class Test_Cancel_Volunteer(unittest.TestCase):
                 results=cancel_volunteer.email_request()
             self.assertEqual(results,"sizulu022@student.wethinkcode.co.za")
 
-            # 2023-02-10 - 10:00:00+02:00
+          
 
 
         def test_choose_slot(self):

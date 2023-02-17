@@ -2,14 +2,24 @@ from quickstart import *
 
 
 def email_request():
-    user_name = input("\n------------------------------------\nPlease enter your student user name:")
-    print("------------------------------------")
-    print("------------------------------------")
-    email = f'{user_name.lower()}@student.wethinkcode.co.za'
-    return email
+    """Ask user for their student user name
+        to construct a full email
+    return : email"""
+    user_name = input("\n+------------------------------------+\nPlease enter your student user name: ")
+    print("+------------------------------------+")
+    name_ending = user_name[-3:]
+    if name_ending == "022" and (len(user_name) == 9 or len(user_name) == 10 or len(user_name) == 11 or len(user_name) == 12) :
+        email = f'{user_name.lower()}@student.wethinkcode.co.za'
+        print("------------------------------------")
+        return email
+
+    print("\nInvalid student user name, please try again.")
+    email_request()
 
 
 def calendar ():
+    """Uses the code_clinc calendar credentials to return a sesource object with methods for interacting with the service.
+    """
     creds = None
 
     if os.path.exists('token.json'):
@@ -21,7 +31,13 @@ def calendar ():
 
 
 def list_of_vol_slot(email,service):
-    
+    """
+    Retrieves and selects desired data from the calendar
+        stores the retrieved and selected data in an empty list
+    Param: email ,service
+    return: list
+    """
+
     now = datetime.datetime.utcnow().isoformat() + 'Z' 
     events_result = service.events().list(calendarId='primary', timeMin=now,
                                             singleEvents=True,
@@ -42,18 +58,28 @@ def list_of_vol_slot(email,service):
 
 
 def slot_display(data_structure):
-    print("Availble Slots :\n-------------------------------------------------------")
-    print("Date             |Time                   |Task")
+    """
+    Displays data to the user
+    Param: data_structure
+    """
+    print("|Availble Slots :\n+-------------------------------------------------------+")
+    print("|Date             |Time                   |Task")
     num = 1
     for date,time,title,id in data_structure:
-            print("-------------------------------------------------------\n",str(num)+")",date,"\t","|"+time,"\t","|"+title)
+            print("+-------------------------------------------------------+\n|",str(num)+")",date,"\t","|"+time,"\t","|"+title)
             if date == data_structure[-1][0]:
-                    print("-------------------------------------------------------")
+                    print("+-------------------------------------------------------+")
             num+=1
 
 
 def choose_slot(data):
-    number = int(input("Please choose a number ?"))
+    """
+    Asks user for a number 
+    decrements the users number 
+    Param: data
+    return: integer
+    """
+    number = int(input("Please choose a number :"))
     if len(data) < number or number <= 0 :
             print("The number you chose is not on the list.")
             choose_slot(data)
@@ -62,6 +88,10 @@ def choose_slot(data):
 
 
 def booker(service,data,email):
+    """
+    Cancels the user requested slot and displays a successful messsage to the user
+    Param: service, data, email
+    """
 
     indx = choose_slot(data)
     id = data[indx][3]
@@ -84,6 +114,9 @@ k='#'
 j=0
 k='#'
 def loader_animation():
+    """
+    Creates a loading animation.
+    """
 
     from time import sleep
 
@@ -123,6 +156,10 @@ def loader_animation():
 
 
 def cancel_engine():
+    """
+    Calls all the required functions to run the programme
+    return: int | None
+    """
     email = email_request()
     serv = calendar()
     data = list_of_vol_slot(email,serv)
@@ -131,9 +168,12 @@ def cancel_engine():
         slot_display(data)
         booker(serv,data,email)
     else:
-        print("Sorry but you no bookings to cancel.")
+        print("Sorry but you have no bookings to cancel.")
     return len(data)
 
 
 if __name__=="__main__":
     cancel_engine()
+
+
+#detect wifi service by raising exceptions.TransportError(exc)
