@@ -20,7 +20,7 @@ def clinic_cred():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
     return creds
-    
+
 
 def student_cred():
     creds = None

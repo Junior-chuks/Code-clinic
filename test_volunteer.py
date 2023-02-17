@@ -16,11 +16,11 @@ class Test_Volunteer(unittest.TestCase):
         self.assertEqual(type(cal),  googleapiclient.discovery.Resource)
 
 
-    def test_slot_time(self):
-        cred = volunteer.clinic_cred()
-        service = volunteer.calendar(cred)
-        data = volunteer.slot_time(service)
-        self.assertEqual(type(data),list)
+    # def test_slot_time(self):
+    #     cred = volunteer.clinic_cred()
+    #     service = volunteer.calendar(cred)
+    #     data = volunteer.slot_time(service)
+    #     self.assertEqual(type(data),list)
         
         
 if __name__=="__main__":

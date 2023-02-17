@@ -1,0 +1,38 @@
+import unittest
+import io
+import booking_system
+from test_base import captured_io
+from io import StringIO
+import googleapiclient.discovery
+
+
+#  self.assertEqual("""What do you want to name your robot? HAL: Hello kiddo!
+# HAL: What must I do next? HAL: Shutting down..""", output)
+
+
+
+class Test_Booking_system(unittest.TestCase):
+
+    def test_email_request(self):
+         with captured_io(StringIO('Siyabonga\n')) as (out, err):
+            booking_system.email_request()
+            output = out.getvalue().strip()
+
+            self.assertEqual("""------------------------------------
+Please enter your student user name:------------------------------------
+""", output)
+
+     
+
+
+    # def test_list_of_vol_slot(self):
+
+    #def test_slot_display(self):
+
+    #def test_booker(self):
+
+    #def test_booking_engine(self):
+    
+        
+if __name__=="__main__":
+    unittest.main()
