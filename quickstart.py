@@ -14,10 +14,12 @@ from googleapiclient.errors import HttpError
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-
+# returns code clinic calendar credentials
 def main_clinic():
-    """Shows basic usage of the Google Calendar API.
-    Prints the start and name of the next 10 events on the user's calendar.
+    """
+    Retrieves calendar credentials through authorization flow
+        after the user has signed in
+    return: creds
     """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
@@ -47,10 +49,12 @@ def main_clinic():
     calendar(creds,message)
     return creds
 
-
+# returns student credentials
 def main_student():
-    """Shows basic usage of the Google Calendar API.
-    Prints the start and name of the next 10 events on the user's calendar.
+    """
+    Retrieves calendar credentials through authorization flow
+        after the user has signed in
+    return: creds
     """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
@@ -76,6 +80,11 @@ def main_student():
     
 
 def calendar(creds,mesg):
+    """
+    Displays a title for the calendar data based on the string passed in as the parameter for mesg
+    Displays both upcoming and no upcoming event according to credentails passed in as a parameter
+    Param: creds, mesg
+    """
     try:
         service = build('calendar', 'v3', credentials=creds)
 
@@ -89,7 +98,7 @@ def calendar(creds,mesg):
         events = events_result.get('items', [])
 
 
-        # Prints the start and name of the next 7 events
+        # Prints the date ,time and task of the next 7 days of calendar data
         if not events:
             no_upcoming_event(events)
         else:
@@ -100,6 +109,10 @@ def calendar(creds,mesg):
         
 
 def upcoming_event(events):
+    """
+    Iterates through a list valid events from the calendar to decided suitable formats to display the data
+    Param: events
+    """
         
     dai = 0
 
@@ -163,6 +176,10 @@ def upcoming_event(events):
 
 
 def no_upcoming_event(events):
+        """
+        Iterates through an empyt list of data from the calendar to display a default format
+        Param: events
+        """
         
         dai = 0
         
@@ -198,6 +215,11 @@ def no_upcoming_event(events):
 
 
 def end_month_monitor(dai,lis_day,lis_date):
+    """
+    Tracks the end of the month to increment properly into the next month
+    Param: dai, lis_day, lis_date
+    return: month, lenght, lis_day
+    """
     lenght =0
     month = int(lis_date[1]) + 1
     months = ["01", "03", "05", "07", "08", "10", "12"]
@@ -238,6 +260,10 @@ def end_month_monitor(dai,lis_day,lis_date):
    
         
 def view_calendar(count):
+    """
+    Displays the two calendar 7 days of event data
+    Param: count
+    """
     main_clinic()
     main_student()
 
@@ -256,7 +282,12 @@ def view_calendar(count):
         file_update(count)
 
 
-def file_update(n):
+def file_update(num):
+    """
+    Downloads a file that stores both calendar data worth 7 days
+    and continues to update the existing file whenever it's called upon
+    Param: num
+    """
     if os.path.exists("calendar.txt"):
 
         mess = "\nUpdating file:"
@@ -267,16 +298,19 @@ def file_update(n):
         mess_2 = "\nFile download complete."
 
     original_stdout = sys.stdout
-    if n == 0:
+    if num == 0:
        return  
     with open("calendar.txt","w") as sys.stdout:
-        n-=1
-        view_calendar(n)
+        num-=1
+        view_calendar(num)
         sys.stdout = original_stdout
     loader_animation(mess,mess_2)
 
 
 def login():
+    """
+    Prompts the user to login to both calendar
+    """
     if os.path.exists('tokens.json') :
         print("Already logged in")
     
@@ -288,14 +322,23 @@ def login():
 
 
 def blockPrint():
+    """
+    Blocks out any print statements from being displayed
+    """
     sys.stdout = open(so.devnull, 'w')
 
 
 def enablePrint():
+    """
+    Allows print statements to be displayed
+    """
     sys.stdout = sys.__stdout__
 
 
 def logout():
+    """
+    Prompts the user to logout of both calendar
+    """
     if os.path.exists("tokens.json"):
         so.remove("tokens.json")
         so.remove("token.json")
@@ -305,6 +348,10 @@ def logout():
 
 
 def loader_animation(message,message_2):
+    """
+    Creates a loading animation that's displayed on the user interface
+    Param: message,message_2
+    """
     import time
     import sys
     print(message)

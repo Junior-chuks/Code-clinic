@@ -10,6 +10,9 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 
 def clinic_cred():
+    """
+    Creates a token.json file and returns the credentials
+    """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -20,6 +23,9 @@ def clinic_cred():
     
 
 def student_cred():
+    """
+    Creates a tokens.json file and returns the credentials
+    """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -31,11 +37,18 @@ def student_cred():
 
 
 def calendar(cred):
+    """Creates a service based of the provided calendar credentials 
+    Param: cred
+    return: service"""
     service = build('calendar', 'v3', credentials=cred)
     return service
 
 
 def volunteer(cred):
+    """
+    Prompts user to pass inputs regarding the slot they wish to create
+    Param: cred
+    """
 
     service = calendar(cred)
     current_time = datetime.datetime.now().strftime("%H:%M")
@@ -132,6 +145,12 @@ def volunteer(cred):
 
 
 def slot_time(serv):
+    """
+    Iterate through the calendar to retrieve a desired set of data 
+    susch as date, time and email which than stored in a tuple and than stored in a list
+    Param: serv
+    return: list
+    """
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         
     events_result = serv.events().list(calendarId='primary', timeMin=now,
@@ -146,6 +165,7 @@ def slot_time(serv):
 
 
 def slot_checker():
+    """Calls the necessary functions to run the entire file accordingly"""
 
     c = clinic_cred()
     volunteer(c)
