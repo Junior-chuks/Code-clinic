@@ -39,3 +39,84 @@ def list_of_vol_slot(email,service):
                     lis.append((date_and_time[0],date_and_time[1],title,id))
 
     return lis
+
+
+def slot_display(data_structure):
+    print("Availble Slots :\n-------------------------------------------------------")
+    print("Date             |Time                   |Task")
+    num = 1
+    for date,time,title,id in data_structure:
+            print("-------------------------------------------------------\n",str(num)+")",date,"\t","|"+time,"\t","|"+title)
+            if date == data_structure[-1][0]:
+                    print("-------------------------------------------------------")
+            num+=1
+
+
+def choose_slot(data):
+    number = int(input("Please choose a number ?"))
+    if len(data) < number or number <= 0 :
+            print("The number you chose is not on the list.")
+            choose_slot(data)
+    indx = number-1
+    return indx
+
+
+def booker(service,data,email):
+
+    indx = choose_slot(data)
+    id = data[indx][3]
+    
+    event = service.events().get(calendarId='primary', eventId=id).execute()
+
+    event['summary'] = 'Volunteer'
+    event['description'] = "Free session"
+    attnedees = event['attendees']
+    attnedees.pop(1)
+
+    print("\nCancelling booking... ")
+    loader_animation()
+    updated_event = service.events().update(calendarId='primary', eventId=event['id'], body=event).execute()
+
+    print("\nBooking successfully cancelled")
+
+
+k='#'
+j=0
+k='#'
+def loader_animation():
+
+    from time import sleep
+
+    def fixed_space(i,array):
+        g=(' '*len(str(len(array))))
+        g=g.replace(' ','',len(str(int(i))))
+        return g
+
+
+    def ani(i,array):
+        global k
+        #For accessing the global variables that are defined out of the function
+        global j
+        per=((i+1)*100)//len(array)
+        #To calculate percentage of completion of loop
+        c=per//5
+        #Integer division (the value 5 decides the length of the bar)
+        if c!=j:
+        #When ever the values of these 2 variables change add one # to the global variable k
+            k+='#'
+
+        y='['+k+'                     '+']'
+        #20 empty spaces (100/5) 
+        y=y.replace(' ','',len(k))
+        #To make the size of the bar fixed ever time the length of k increases one ' ' will be removed
+        g=fixed_space(per,array)
+        #To fix at the same position
+        f=fixed_space(i,array)
+        print('Status : ',y,g+str(per)+'%',' ('+f+str(i+1)+' / '+str(len(array))+' ) ',end='\r')
+        #That same '\r' to clear previous text
+        j=c
+
+    array = range(100)
+    for i in array:
+        ani(i,array)
+        sleep(0.1)
