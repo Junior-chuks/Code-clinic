@@ -27,6 +27,7 @@ def list_of_vol_slot(email):
 
         lis =[]
         for event in events:
+                print(event["email"])
                 start = event['start'].get('dateTime', event['start'].get('date'))
                 emails = event["attendees"]
                 date_and_time = start.split('T')
