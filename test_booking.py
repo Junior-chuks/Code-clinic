@@ -15,10 +15,10 @@ class TestQuickStart(unittest.TestCase):
         self.assertEqual(cb.email_request(), expected_result)
     
 
-#     def test_calendar(self):
-#         '''
-#         Testing if calender creds are valid
-#         '''
+    def test_calendar(self):
+        '''
+        Testing if calender creds are valid
+        '''
 #         creds = None
 #         if os.path.exists('token.json'):
 #             creds = cb.Credentials.from_authorized_user_file('token.json', cb.SCOPES)
