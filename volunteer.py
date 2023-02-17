@@ -128,7 +128,6 @@ def slot_checker():
     c = clinic_cred()
     volunteer(c)
 
-
 if __name__ == "__main__":
     
     slot_checker()

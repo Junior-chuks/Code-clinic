@@ -264,8 +264,8 @@ def file_update(n):
 
 
 if __name__ == '__main__':
-    # view_calendar(1)
+    view_calendar(1)
     # file_update(1)
-    b = main_clinic()
+    # b = main_clinic()
     # volunteer.volunteer(b)
     
