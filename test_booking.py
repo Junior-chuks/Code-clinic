@@ -25,5 +25,5 @@ class TestQuickStart(unittest.TestCase):
 #         self.assertTrue(cb.calendar(), creds)
 
 
-# if __name__ == '__main__':
-#     unittest.main()  
+if __name__ == '__main__':
+    unittest.main()  
