@@ -110,17 +110,17 @@ def loader_animation():
                 sleep(0.1)
 
 
-# def cancel_engine():
-#         user_email = email_request()
-#         data,servicc = list_of_vol_slot(user_email)
+def cancel_engine():
+        user_email = email_request()
+        data,servicc = list_of_vol_slot(user_email)
 
-#         if len(data) > 0 :
-#                 slot_display(data)
-#                 indx = choose_slot(data)
-#                 cancel_volunteer(data,indx,servicc)
-#         else:
-#                 print("Sorry but you have no slots to cancel")
-#         return len(data)
+        if len(data) > 0 :
+                slot_display(data)
+                indx = choose_slot(data)
+                cancel_volunteer(data,indx,servicc)
+        else:
+                print("Sorry but you have no slots to cancel")
+        return len(data)
 
 
 if __name__=="__main__":
