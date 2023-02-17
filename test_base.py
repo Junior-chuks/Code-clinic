@@ -41,8 +41,4 @@ def run_unittests(test_filename):
     suite = loader.loadTestsFromName(test_filename)
 
     runner = unittest.TextTestRunner(stream=sys.stdout)
-<<<<<<< HEAD
     return runner.run(suite)
-=======
-    return runner.run(suite)
->>>>>>> main

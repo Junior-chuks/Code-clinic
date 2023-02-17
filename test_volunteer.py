@@ -1,7 +1,6 @@
 import unittest
 import io
 import volunteer
-from test_base import captured_io
 from io import StringIO
 import googleapiclient.discovery
 

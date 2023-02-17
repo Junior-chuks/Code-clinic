@@ -7,13 +7,27 @@ def email_verification():
 
 
 def email_request():
-        user_name = input("\n------------------------------------\nPlease enter your student user name:")
-        print("------------------------------------")
-        email = f'{user_name.lower()}@student.wethinkcode.co.za'
-        return email
+        """Ask user for their student user name
+                to construct a full email
+        return : email | None"""
+        user_name = input("\n+------------------------------------+\nPlease enter your student user name: ")
+        print("+------------------------------------+")
+        name_ending = user_name[-3:]
+        if name_ending == "022" and (len(user_name) == 9 or len(user_name) == 10 or len(user_name) == 11 or len(user_name) == 12) :
+                email = f'{user_name.lower()}@student.wethinkcode.co.za'
+                return email
+
+        print("\nInvalid student user name, please try again.")
+        email_request()
 
 
 def list_of_vol_slot(email):
+        """
+        Retrieves and selects desired data from the calendar
+                stores the retrieved and selected data in an empty list
+        Param: email 
+        return: list,service
+        """
         creds = None
         if os.path.exists('token.json'):
                 creds = Credentials.from_authorized_user_file('token.json', SCOPES)
@@ -24,10 +38,9 @@ def list_of_vol_slot(email):
                                                 singleEvents=True,
                                                 orderBy='startTime').execute()
         events = events_result.get('items', [])
-
+        
         lis =[]
         for event in events:
-                print(event["email"])
                 start = event['start'].get('dateTime', event['start'].get('date'))
                 emails = event["attendees"]
                 date_and_time = start.split('T')
@@ -40,19 +53,29 @@ def list_of_vol_slot(email):
 
 
 def slot_display(data_structure):
-        print("Your Slots :\n-------------------------------------------------------")
-        print("Date             |Time                   |Task")
+        """
+        Displays data to the user
+        Param: data_structure
+        """
+        print("|Your Slots :\n+-------------------------------------------------------+")
+        print("|Date             |Time                   |Task")
         num = 1
         for date,time,title,id in data_structure:
-                print("-------------------------------------------------------\n",str(num)+")",date,"\t","|"+time,"\t","|"+title)
+                print("+-------------------------------------------------------+\n|",str(num)+")",date,"\t","|"+time,"\t","|"+title)
                 if date == data_structure[-1][0]:
-                        print("-------------------------------------------------------")
+                        print("+-------------------------------------------------------+")
                 num+=1
         
 
 def choose_slot(data):
+        """
+        Asks user for a number 
+        decrements the users number 
+        Param: data
+        return: integer
+        """
 
-        number = int(input("Please choose a number ?"))
+        number = int(input("Please choose a number :"))
         if len(data) < number or number <= 0 :
                 print("The number you chose is not on the list.")
                 choose_slot(data)
@@ -61,6 +84,10 @@ def choose_slot(data):
         
 
 def cancel_volunteer(data,index,service):
+        """
+        Cancels the user requested slot and displays a successful messsage to the user
+        Param: service, data, email
+        """
 
         print("Cancelling volunteer slot... ")
         loader_animation()
@@ -73,6 +100,9 @@ k='#'
 j=0
 k='#'
 def loader_animation():
+        """
+        Creates a loading animation.
+        """
         from time import sleep
 
         def fixed_space(i,array):
@@ -111,6 +141,10 @@ def loader_animation():
 
 
 def cancel_engine():
+        """
+        Calls all the required functions to run the programme
+        return: int | None
+        """
         user_email = email_request()
         data,servicc = list_of_vol_slot(user_email)
 
@@ -120,7 +154,7 @@ def cancel_engine():
                 cancel_volunteer(data,indx,servicc)
         else:
                 print("Sorry but you have no slots to cancel")
-        return len(data)
+                return len(data)
 
 
 if __name__=="__main__":
