@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 
 class TestQuickStart(unittest.TestCase):
-#     @patch('builtins.input', return_value="sinmbhel022")
-#     def test_email_request(self,input):
+    @patch('builtins.input', return_value="sinmbhel022")
+    def test_email_request(self,input):
 #         ''' 
 #         Tests username of student.
 #         '''
