@@ -154,7 +154,7 @@ def cancel_engine():
                 cancel_volunteer(data,indx,servicc)
         else:
                 print("Sorry but you have no slots to cancel")
-                return len(data)
+        return len(data)
 
 
 if __name__=="__main__":
