@@ -19,10 +19,10 @@ class TestQuickStart(unittest.TestCase):
         '''
         Testing if calender creds are valid
         '''
-#         creds = None
-#         if os.path.exists('token.json'):
-#             creds = cb.Credentials.from_authorized_user_file('token.json', cb.SCOPES)
-#         self.assertTrue(cb.calendar(), creds)
+        creds = None
+        if os.path.exists('token.json'):
+            creds = cb.Credentials.from_authorized_user_file('token.json', cb.SCOPES)
+        self.assertTrue(cb.calendar(), creds)
 
 
 if __name__ == '__main__':
