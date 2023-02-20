@@ -106,7 +106,7 @@ def calendar(creds,mesg):
             upcoming_event(events)
         
     except HttpError as error:
-        print('An error occurred: %s' % error)
+        print('🔴 An error occurred: %s' % error)
         
 
 def upcoming_event(events):
@@ -303,11 +303,11 @@ def file_update(num):
     if os.path.exists("calendar.txt"):
 
         mess = "\nUpdating file:"
-        mess_2 = "\nFile update complete."
+        mess_2 = "\n🟢 File update complete."
 
     else:
         mess = "\nDownloading file:"
-        mess_2 = "\nFile download complete."
+        mess_2 = "\n🟢 File download complete."
 
     original_stdout = sys.stdout
     if num == 0:
@@ -324,13 +324,16 @@ def login():
     Prompts the user to login to both calendar
     """
     if os.path.exists('tokens.json') :
-        print("Already logged in")
+        print("⚪ Already logged in")
     
     else:
+        print("Use the following login details:\n"
+            "Email: codeclinic123@gmail.com\n"
+            "Password: codeclinc_1")
         blockPrint()
         file_update(1)
         enablePrint()
-        print("Login successful. :)")
+        print("🟢 Login successful. :)")
 
 
 def blockPrint():
@@ -354,9 +357,9 @@ def logout():
     if os.path.exists("tokens.json"):
         so.remove("tokens.json")
         so.remove("token.json")
-        print("Logout successful. :)")
+        print("🟢 Logout successful. :)")
     else:
-        print("Already logged out.")
+        print("⚪ Already logged out.")
 
 
 def loader_animation(message,message_2):

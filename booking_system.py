@@ -13,7 +13,7 @@ def email_request():
         email = f'{user_name.lower()}@student.wethinkcode.co.za'
         return email
 
-    print("\nInvalid student user name, please try again.")
+    print("\n🔴 Invalid student user name, please try again.")
     email_request()
 
 # returns a service from the code_clinic calendar credentials
@@ -108,7 +108,7 @@ def booker(service,data,email):
 
     # Print the updated date.
     # print (updated_event['updated'])
-    print("Slot successfully booked")
+    print("🟢 Slot successfully booked")
 
 
 def booking_engine():
@@ -123,7 +123,7 @@ def booking_engine():
         slot_display(data)
         booker(serv,data,email)
     else:
-        print("Sorry but you have no available slots to book. :(")
+        print("⚪ Sorry but you have no available slots to book. :(")
         return len(data)
 
 

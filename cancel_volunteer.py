@@ -17,7 +17,7 @@ def email_request():
                 email = f'{user_name.lower()}@student.wethinkcode.co.za'
                 return email
 
-        print("\nInvalid student user name, please try again.")
+        print("\n🔴 Invalid student user name, please try again.")
         email_request()
 
 
@@ -93,7 +93,7 @@ def cancel_volunteer(data,index,service):
         loader_animation()
         id = data[index][3]
         service.events().delete(calendarId='primary', eventId=id).execute()
-        print("The slot has been successfuly cancelled.")
+        print("🟢 The slot has been successfuly cancelled.")
 
 
 k='#'
@@ -130,7 +130,7 @@ def loader_animation():
                 g=fixed_space(per,array)
                 #To fix at the same position
                 f=fixed_space(i,array)
-                print('Status : ',y,g+str(per)+'%',' ('+f+str(i+1)+' / '+str(len(array))+' ) ',end='\r')
+                print('🟢 Status : ',y,g+str(per)+'%',' ('+f+str(i+1)+' / '+str(len(array))+' ) ',end='\r')
                 #That same '\r' to clear previous text
                 j=c
 
@@ -153,7 +153,7 @@ def cancel_engine():
                 indx = choose_slot(data)
                 cancel_volunteer(data,indx,servicc)
         else:
-                print("Sorry but you have no slots to cancel")
+                print("⚪ Sorry but you have no slots to cancel")
         return len(data)
 
 

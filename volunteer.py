@@ -61,11 +61,11 @@ def volunteer(cred):
             if name_ending == "022" and (len(user_name) == 9 or len(user_name) == 10 or len(user_name) == 11 or len(user_name) == 12) :
                 break
             else:
-                print("Invalid student user name, please try again.")
+                print("🔴 Invalid student user name, please try again.")
 
         email = f'{user_name.lower()}@student.wethinkcode.co.za'
         title = input("Please type 'volunteer: ")
-        location = input("Location: ")
+        location = input("Location 📍: ")
         
     
         date = input("Please select date(yyyy-mm-dd): ")
@@ -77,11 +77,11 @@ def volunteer(cred):
             try:
                 datetime.datetime.strptime(time,"%H:%M")
             except ValueError :
-                print("Invalid time format ,try again.")
+                print("🔴 Invalid time format ,try again.")
                 continue
 
             if time_split[0] == hour[0] and time_split[1] >= hour[1] and date == current_date or hour[0] < time_split[0] and date == current_date:
-                print("This time has already passed.")
+                print("🔴 This time has already passed.")
                 continue
 
             break
@@ -135,13 +135,13 @@ def volunteer(cred):
             }
 
             event = service.events().insert(calendarId='primary', body=event).execute()
-            print ('Volunteer slot created: %s' % (event.get('htmlLink')))
+            print ('🟢 Volunteer slot created: %s' % (event.get('htmlLink')))
 
         else :
-            print("This time is already taken.Please choose another.")
+            print("🔴 This time is already taken.Please choose another.")
 
     except  (HttpError):
-        print("\nYour input format was incorrect. :(")
+        print("\n🔴 Your input format was incorrect. :(")
 
 
 def slot_time(serv):

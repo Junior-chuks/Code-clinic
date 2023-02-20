@@ -13,7 +13,7 @@ def email_request():
         print("------------------------------------")
         return email
 
-    print("\nInvalid student user name, please try again.")
+    print("\n🔴 Invalid student user name, please try again.")
     email_request()
 
 
@@ -107,7 +107,7 @@ def booker(service,data,email):
     loader_animation()
     updated_event = service.events().update(calendarId='primary', eventId=event['id'], body=event).execute()
 
-    print("\nBooking successfully cancelled")
+    print("\n🟢 Booking successfully cancelled")
 
 
 k='#'
@@ -145,7 +145,7 @@ def loader_animation():
         g=fixed_space(per,array)
         #To fix at the same position
         f=fixed_space(i,array)
-        print('Status : ',y,g+str(per)+'%',' ('+f+str(i+1)+' / '+str(len(array))+' ) ',end='\r')
+        print('🟢 Status : ',y,g+str(per)+'%',' ('+f+str(i+1)+' / '+str(len(array))+' ) ',end='\r')
         #That same '\r' to clear previous text
         j=c
 
@@ -168,7 +168,7 @@ def cancel_engine():
         slot_display(data)
         booker(serv,data,email)
     else:
-        print("Sorry but you have no bookings to cancel.")
+        print("⚪ Sorry but you have no bookings to cancel.")
     return len(data)
 
 
